@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from firsthomework import views
-
+from firsthomework.views import indexView
+from firsthomework.views import aboutView
+from firsthomework.views import loginView
+from firsthomework.views import registerView
+from firsthomework.views import productsView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home',views.home),
-    path('about',views.about),
-    path('register',views.register),
-    path('login',views.login),
-    path('products',views.products),
+    path('index',indexView.as_view()),
+    path('about',aboutView.as_view()),
+    path('login',loginView.as_view()),
+    path('register',registerView.as_view()),
+    path('products',productsView.as_view()),
 ]
